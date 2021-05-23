@@ -43,7 +43,13 @@ parser =
 withInfo :: Parser a -> String -> ParserInfo a
 withInfo parser desc = info (helper <*> parser) $ progDesc desc
 
+preferences :: ParserPrefs
+preferences =
+  prefs $
+    showHelpOnEmpty
+    <> showHelpOnError
+
 main :: IO ()
 main = do
-  command <- execParser $ parser `withInfo` "Manage the address book"
+  command <- customExecParser preferences $ parser `withInfo` "Manage the address book"
   print command
