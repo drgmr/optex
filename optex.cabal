@@ -1,0 +1,19 @@
+name:                optex
+version:             0.1.0.0
+homepage:            https://github.com/drgmr/optex#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Eduardo Pereira Poernbacher
+maintainer:          hey@drgmr.com
+copyright:           2021 Eduardo Pereira Poernbacher
+category:            Exercise
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+executable optex
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                    ,  optparse-applicative
